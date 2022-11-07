@@ -1,0 +1,9 @@
+*
+
+!.gitattributes
+!.gitignore
+!readme.md
+!.gitkeep
+!/mnist
+!/cifar_10
+!**/*.py
