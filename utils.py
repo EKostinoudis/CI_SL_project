@@ -66,7 +66,11 @@ class GS_wrapper(GridSearchCV, TrainTestMetric):
         super().fit(*args, **kwargs)
         self.gs_time = time() - t0
 
-def save_plots(fig, name):
-    if not os.path.exists("figures"):
-        os.makedirs("figures")
-    fig.savefig(f"figures/{name}.png")
+def save_plots(fig, name, folder=None):
+    path = "figures"
+    if folder is not None:
+        path = os.path.join(path, folder)
+
+    if not os.path.exists(path):
+        os.makedirs(path)
+    fig.savefig(os.path.join(path, f"{name}.png"))
