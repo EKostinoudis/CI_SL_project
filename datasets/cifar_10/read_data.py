@@ -35,11 +35,27 @@ def load_train_batch(batch_num):
     ensure_data_exists()
 
     if 1 <= batch_num <= 5:
-        return unpickle(f'cifar-10-batches-py/data_batch_{batch_num}')
+        file = Path(__file__).parent.joinpath(f'cifar-10-batches-py/data_batch_{batch_num}')
+        return unpickle(file)
     else:
         raise Exception(f"Incorrect batch number {batch_num}")
 
 def load_test_batch():
     ensure_data_exists()
-    return unpickle('cifar-10-batches-py/test_batch')
+    file = Path(__file__).parent.joinpath('cifar-10-batches-py/test_batch')
+    return unpickle(file)
 
+def load_train_data():
+    labels = []
+    data = None
+    # load data for all the batches
+    for i in range(1,6):
+        batch_data = load_train_batch(i)
+        # data = np.vstack(data, batch_data[b'data'])
+        data = np.concatenate((data, batch_data[b'data']), axis=0) if data is not None else batch_data[b'data']
+        labels.extend(batch_data[b'labels'])
+    return data, np.array(labels, dtype=np.uint8)
+
+def load_test_data():
+    batch_data = load_test_batch()
+    return batch_data[b'data'], np.array(batch_data[b'labels'], dtype=np.uint8)
