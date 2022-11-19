@@ -9,7 +9,7 @@ def extract_tar_gz_if_needed(file):
     file_names = file.getnames()
     file_names = [Path(__file__).parent.joinpath(file) for file in file_names]
     if any([not exists(file) for file in file_names]):
-        file.extractall()
+        file.extractall(Path(__file__).parent)
     file.close()
 
 def download_if_not_exists(file):
