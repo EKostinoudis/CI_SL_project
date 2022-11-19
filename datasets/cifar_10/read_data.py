@@ -40,6 +40,11 @@ def load_train_batch(batch_num):
     else:
         raise Exception(f"Incorrect batch number {batch_num}")
 
+def load_batch_meta():
+    ensure_data_exists()
+    file = Path(__file__).parent.joinpath('cifar-10-batches-py/batches.meta')
+    return unpickle(file)
+
 def load_test_batch():
     ensure_data_exists()
     file = Path(__file__).parent.joinpath('cifar-10-batches-py/test_batch')
@@ -59,3 +64,7 @@ def load_train_data():
 def load_test_data():
     batch_data = load_test_batch()
     return batch_data[b'data'], np.array(batch_data[b'labels'], dtype=np.uint8)
+
+def load_label_names():
+    batch_data = load_batch_meta()
+    return list(x.decode() for x in batch_data[b'label_names'])
