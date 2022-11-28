@@ -73,7 +73,7 @@ def save_plots(fig, name, folder=None):
 
     if not os.path.exists(path):
         os.makedirs(path)
-    fig.savefig(os.path.join(path, f"{name}.png"))
+    fig.savefig(os.path.join(path, f"{name}.png"), bbox_inches='tight')
 
 def create_if_not_exists(folder):
     if not os.path.exists(folder):
