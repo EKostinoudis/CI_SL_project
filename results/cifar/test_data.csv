@@ -1,0 +1,16 @@
+Model,Accuracy,Precision,Recall,F1
+"C: 1
+kernel: linear",0.4092,0.4067,0.4092,0.4067
+"C: 1
+degree: 2
+gamma: 1
+kernel: poly",0.5463,0.5485,0.5463,0.5457
+"C: 10
+gamma: 1
+kernel: rbf",0.5600,0.5626,0.5600,0.5607
+"C: 10000
+gamma: 0.001
+kernel: sigmoid",0.4074,0.4046,0.4074,0.4048
+"n_neighbors: 1
+weights: uniform",0.3394,0.4238,0.3394,0.3307
+Nearest Centroid,0.3690,0.3647,0.3690,0.3601
