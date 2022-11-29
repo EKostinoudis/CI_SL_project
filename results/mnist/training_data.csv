@@ -1,0 +1,16 @@
+Model,Accuracy,Precision,Recall,F1,Training Time (seconds)
+"C: 10
+kernel: linear",0.9461,0.9460,0.9461,0.9460,57.5676
+"C: 10
+degree: 4
+gamma: 0.1
+kernel: poly",0.9993,0.9993,0.9993,0.9993,54.2103
+"C: 10
+gamma: 1
+kernel: rbf",1.0000,1.0000,1.0000,1.0000,125.2382
+"C: 10000
+gamma: 0.001
+kernel: sigmoid",0.9460,0.9459,0.9460,0.9459,63.1962
+"n_neighbors: 3
+weights: distance",1.0000,1.0000,1.0000,1.0000,0.0161
+Nearest Centroid,0.8495,0.8520,0.8495,0.8496,0.0508
