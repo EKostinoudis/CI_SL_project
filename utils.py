@@ -5,12 +5,12 @@ from sklearn import metrics
 from time import time
 import os
 
-def calculate_metrics(model, x, y):
+def calculate_metrics(model, x, y, average="macro"):
     y_predicted = model.predict(x)
     acc = metrics.accuracy_score(y, y_predicted)
-    prec = metrics.precision_score(y, y_predicted, average="macro")
-    recall = metrics.recall_score(y, y_predicted, average="macro")
-    f1 = metrics.f1_score(y, y_predicted, average="macro")
+    prec = metrics.precision_score(y, y_predicted, average=average)
+    recall = metrics.recall_score(y, y_predicted, average=average)
+    f1 = metrics.f1_score(y, y_predicted, average=average)
     return (acc, prec, recall, f1)
 
 class TrainTestMetric():
