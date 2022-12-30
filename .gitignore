@@ -4,4 +4,8 @@ figures
 results
 *.aux
 *.log
+*.bbl
+*.bcf
+*.blg
+*.run.xml
 

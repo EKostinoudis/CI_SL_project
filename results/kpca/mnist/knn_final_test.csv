@@ -1,0 +1,3 @@
+Model,Best n,Accuracy,Precision,Recall,F1,KPCA+LDA Time (seconds),kNN Time
+"kernel: rbf
+gamma: 0.05",1,0.9726,0.9726,0.9726,0.9725,8818.2817,2.8122
