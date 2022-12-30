@@ -157,7 +157,7 @@ class KPCA_LDA():
             return np.concatenate((z1, z2), axis=1)
 
     def train_dist(self, theta=None):
-        if theta is None:
+        if theta is not None:
             self.theta = theta
         dist = euclidean_distances(self.z1, self.z1)
         dist /= dist.sum(axis=0)
