@@ -4,7 +4,6 @@ from scipy.sparse.csgraph import laplacian
 from scipy.sparse.linalg import eigsh
 
 def spectral_embeddings(x, k, n=50, laplacian_norm=False):
-    # TODO: maybe add number of neighbors as argument
     # create the similarity matrix
     S = NearestNeighbors(n_neighbors=n, n_jobs=-1).fit(x).kneighbors_graph(x)
 
