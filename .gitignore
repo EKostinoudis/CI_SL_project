@@ -3,9 +3,13 @@ __pycache__/
 figures
 results
 *.aux
-*.log
 *.bbl
 *.bcf
 *.blg
+*.log
+*.nav
+*.out
 *.run.xml
+*.snm
+*.toc
 
